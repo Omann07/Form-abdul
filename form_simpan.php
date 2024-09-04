@@ -12,7 +12,10 @@ $jenis_kelamin = $_POST['jenis_kelamin'];
 $sql = "INSERT INTO isi_form (nama, nim, kelas, saran, jenis_kelamin) VALUES ('$nama', '$nim', '$kelas', '$saran', '$jenis_kelamin')";
 
 if ($conn->query($sql) === TRUE) {
-  header("location:form_tampil.php");
+  echo "<script>
+            alert('Data berhasil tersimpan!');
+            location.href = 'form_tampil.php';
+          </script>";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
